@@ -20,8 +20,18 @@ class FamilyStructure:
         return randint(0, 99999999)
 
     def add_member(self, member):
-        # fill this method and update the return
-        pass
+        member['last_name'] = self.last_name
+
+        # 1. check if ID is already added
+        if 'id' in member:
+            self._members.append(member)
+        else:
+            member['id'] = self._generateId()
+            self._members.append(member)
+            
+        # 2. verify age > 0
+        
+
 
     def delete_member(self, id):
         # fill this method and update the return
